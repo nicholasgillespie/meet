@@ -1,0 +1,39 @@
+$colors: (
+  "title": "Colors",
+  "description":
+    "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print.",
+  "items": (
+    (
+      "name": "Slate Blue",
+      "value": #666ca3,
+    ),
+    (
+      "name": "Dark Blue",
+      "value": #13183f,
+    ),
+    (
+      "name": "Cool Grey",
+      "value": #83869a,
+    ),
+    (
+      "name": "French Rose",
+      "value": #f74780,
+    ),
+    (
+      "name": "Cherry Blossom Pink",
+      "value": #ffa7c3,
+    ),
+    (
+      "name": "White",
+      "value": #ffffff,
+    ),
+    (
+      "name": "Orange to Pink",
+      "value": linear-gradient(#ff6f48, #f02aa6),
+    ),
+    (
+      "name": "Purple to Pink",
+      "value": linear-gradient(#4851ff, #f02aa6),
+    ),
+  ),
+);
