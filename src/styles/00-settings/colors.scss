@@ -4,36 +4,36 @@ $colors: (
     "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print.",
   "items": (
     (
-      "name": "Slate Blue",
-      "value": #666ca3,
+      "name": "Strong Blue",
+      "value": #4d96a9,
+    ),
+    (
+      "name": "Light Blue",
+      "value": #71c0d4,
+    ),
+    (
+      "name": "Purple",
+      "value": #855fb1,
     ),
     (
       "name": "Dark Blue",
-      "value": #13183f,
+      "value": #28283d,
     ),
     (
-      "name": "Cool Grey",
-      "value": #83869a,
+      "name": "Gray Blue",
+      "value": #87879d,
     ),
     (
-      "name": "French Rose",
-      "value": #f74780,
+      "name": "Sky Blue",
+      "value": #8ee3f9,
     ),
     (
-      "name": "Cherry Blossom Pink",
-      "value": #ffa7c3,
+      "name": "Lavender",
+      "value": #d9b8ff,
     ),
     (
       "name": "White",
-      "value": #ffffff,
-    ),
-    (
-      "name": "Orange to Pink",
-      "value": linear-gradient(#ff6f48, #f02aa6),
-    ),
-    (
-      "name": "Purple to Pink",
-      "value": linear-gradient(#4851ff, #f02aa6),
+      "value": #fafafa,
     ),
   ),
 );

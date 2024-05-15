@@ -48,7 +48,7 @@
     --columns-item-span: calc((var(--columns) / 4) * 3);
   }
 
-  @include media-query("md") {
-    // --columns: 1;
-  }
+  // @include media-query("md") {
+  // --columns: 1;
+  // }
 }

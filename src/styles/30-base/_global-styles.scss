@@ -6,7 +6,7 @@
 *::after {
   margin: 0;
   padding: 0;
-  // outline: solid 1px hotpink;
+  outline: solid 1px hotpink;
 }
 
 // GLOBAL SETTINGS ////////////////////
@@ -18,7 +18,7 @@ body {
   font-family: var(--font-display);
   font-weight: var(--font-weight-base);
   // letter-spacing: ???;
-  line-height: var(--leading-loose);
+  line-height: var(--leading);
   word-break: break-word;
 }
 
@@ -37,12 +37,12 @@ h1,
 h2,
 h3,
 h4 {
-  // font-family: get(font-family, brand);
-  // font-weight: get(font-weight, medium);
-  letter-spacing: -0.02ch;
+  font-family: get(font-family, base);
+  font-weight: get(font-weight, black);
+  letter-spacing: var(--letter-spacing-heading);
+  color: var(--color-heading-text);
   text-wrap: balance;
   hyphens: auto;
-  color: var(--color-heading-text);
 }
 
 h1 {
@@ -70,7 +70,7 @@ button,
 .button,
 input,
 label {
-  line-height: get(line-height, short);
+  line-height: get(line-height, flat);
 }
 
 // CONTENT ELEMENTS ////////////////////
@@ -128,18 +128,18 @@ table {
   // https://piccalil.li/blog/use-transparent-borders-and-outlines-to-assist-with-high-contrast-mode
   // view sara soueidan's article on this
   display: inline-flex;
-  gap: var(--button-gap, var(--space-gutter));
+  gap: var(--button-gap, 1ch);
   align-items: center;
   justify-content: center;
-  padding: var(--button-padding, var(--space-xs) var(--space-m));
+  padding: var(--button-padding, var(--space-s) var(--space-l));
   background: var(--button-bg, var(--color-surface-bg));
   color: var(--button-text, var(--color-surface-text));
   font-size: var(--button-font-size, var(--text-size-base));
   font-family: var(--button-font, var(--font-display));
-  font-weight: get(font-weight, medium);
+  font-weight: var(--font-weight-medium);
   text-transform: capitalize;
   text-decoration: none;
-  border: 2px solid var(--button-border, var(--color-surface-border));
+  border: var(--button-border, solid);
   border-radius: var(--button-radius, 2em);
 
   &:hover,
@@ -148,12 +148,11 @@ table {
   }
 
   &[data-button="alternate"] {
-    --button-bg: var(--color-global-bg);
-    --button-text: var(--color-global-text);
+    --button-bg: var(--color-purple);
 
     &:hover,
     &:focus-visible {
-      --button-bg: var(--color-light-orange);
+      --button-bg: var(--color-lavender);
     }
   }
 }

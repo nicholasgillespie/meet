@@ -29,9 +29,13 @@ $letterSpacing: formatToken(getItems($text-tracking));
 
 // Centralize design token values in theme map
 $theme: (
-  "breakpoints": $viewports,
   "layout": (
     "base-max": #{map-get($viewports, "max")}px,
+  ),
+  "breakpoints": (
+    "mobile": 400px,
+    "tablet": 600px,
+    "desktop": 800px,
   ),
   "colors": $colors,
   "spacing": $spacing,

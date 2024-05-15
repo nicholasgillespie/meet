@@ -11,10 +11,10 @@
 :root {
   // Colors
   --color-global-bg: #{get(color, white)};
-  --color-global-text: #{get(color, cool-grey)};
+  --color-global-text: #{get(color, gray-blue)};
   --color-heading-text: #{get(color, dark-blue)};
-  --color-surface-bg: #{get(color, dark-blue)};
-  --color-surface-bg-interact: #{get(color, slate-blue)};
+  --color-surface-bg: #{get(color, strong-blue)};
+  --color-surface-bg-interact: #{get(color, light-blue)};
   --color-surface-text: #{get(color, white)};
   --color-surface-text-interact: #{get(color, white)};
 
@@ -22,15 +22,23 @@
   --space-gutter: #{get(space, s-l)};
   --space-gutter-s: #{get(space, s)};
   --space-gutter-l: #{get(space, l)};
-  --space-region: #{get(space, xl-5xl)};
+  --space-region: #{get(space, xl-2xl)};
 
   // Typography - Text Sizes
   --text-size-base: #{get(font-size, step-0)};
   --text-size-meta: #{get(font-size, step--1)};
-  --text-size-heading-1: #{get(font-size, step-4)};
+  --text-size-heading-1: #{get(font-size, step-5)};
   --text-size-heading-2: #{get(font-size, step-3)};
   --text-size-heading-3: #{get(font-size, step-2)};
   --text-size-heading-4: #{get(font-size, step-1)};
+
+  // Typography - Letter Spacings
+  --letter-spacing-base: #{get(letter-spacing, standard)};
+  --letter-spacing-heading: #{get(letter-spacing, standard)};
+
+  // Typography - Line Heights
+  --line-height-base: #{get(line-height, loose)};
+  --line-height-heading: #{get(line-height, loose)};
 
   // Fonts
   --font-display: #{get(font-family, base)};

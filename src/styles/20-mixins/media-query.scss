@@ -3,11 +3,11 @@
 // prettier-ignore
 @mixin media-query($breakpoint: null) {
   $breakpoints: map-get($theme, "breakpoints");
-  $breakpoints: (
-    "sm": map-get($breakpoints, "min"),
-    "md": map-get($breakpoints, "mid"),
-    "lg": map-get($breakpoints, "max"),
-  );
+  // $breakpoints: (
+  //   "sm": map-get($breakpoints, "min"),
+  //   "md": map-get($breakpoints, "mid"),
+  //   "lg": map-get($breakpoints, "max"),
+  // );
 
   $breakpoint-value: map-get($breakpoints, $breakpoint);
 

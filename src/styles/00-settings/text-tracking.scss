@@ -2,17 +2,21 @@ $text-tracking: (
   "title": "Tracking",
   "description": "Uniform letter-spacing adjustments",
   "items": (
+    // (
+    //   "name": "Extra Tight",
+    //   "value": -0.075ch,
+    // ),
+    // (
+    //   "name": "Tight",
+    //   "value": -0.05ch,
+    // ),
     (
-      "name": "Tight",
-      "value": -0.04ch,
-    ),
-    (
-      "name": "Standard",
-      "value": normal,
-    ),
-    (
-      "name": "Loose",
-      "value": 0.1ch,
-    ),
+        "name": "Standard",
+        "value": normal,
+      ),
+    // (
+    //   "name": "Loose",
+    //   "value": 0.1ch,
+    // ),,,
   ),
 );
