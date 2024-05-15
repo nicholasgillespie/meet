@@ -6,7 +6,7 @@
 *::after {
   margin: 0;
   padding: 0;
-  outline: solid 1px hotpink;
+  // outline: solid 1px hotpink;
 }
 
 // GLOBAL SETTINGS ////////////////////
@@ -24,8 +24,8 @@ body {
 
 // DOCUMENT STRUCTURE ////////////////////
 body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  // display: grid;
+  // grid-template-rows: auto 1fr auto;
 }
 
 main {
@@ -47,7 +47,7 @@ h4 {
 
 h1 {
   font-size: var(--text-size-heading-1);
-  max-inline-size: 30ch;
+  // max-inline-size: 30ch;
 }
 
 h2 {

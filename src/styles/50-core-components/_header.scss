@@ -9,6 +9,24 @@ header {
     img {
       block-size: var(--size-step-2);
       line-height: var(--leading);
+      transform: scale(1.1);
+    }
+  }
+
+  .image-tablet-wrapper {
+    --scale: 1;
+    // height: calc(100% * var(--scale));
+    // margin-block: calc(var(--space-2xl-3xl) * var(--scale));
+    margin-block: var(--space-2xl-3xl);
+    margin-inline: auto;
+
+    .image-tablet {
+      transform: scale(var(--scale));
+      transform-origin: top;
+    }
+
+    @media screen and (min-width: 800px) {
+      display: none;
     }
   }
 
@@ -22,46 +40,51 @@ header {
     max-inline-size: calc(45ch + var(--space-gutter) * 2);
     position: relative;
 
-    .img-desktop {
+    .image-desktop {
       position: absolute;
       top: 0;
       block-size: calc(
-        calc(var(--text-size-heading-1) * 2 * 1) +
-          calc(var(--text-size-base) * 2 * 1.5) + calc(2em * 2) +
-          calc(var(--text-size-base) * 1 * 1) + calc(var(--space-s) * 2)
+        var(--text-size-heading-1) * 2 + var(--text-size-base) * 3 + 4em +
+          var(--text-size-base) + var(--space-s) * 2
       );
 
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 799px) {
         display: none;
       }
     }
 
-    .img-tablet {
-    }
-
-    img:first-of-type {
+    .image-desktop--start {
       top: calc(var(--text-size-heading-1) * -1);
       left: 0;
       transform: translateX(
-        calc(-100% - var(--space-l-xl) + var(--space-gutter))
+        calc(-100% - var(--space-xl-2xl) + var(--space-gutter))
       );
     }
 
-    img:last-of-type {
+    .image-desktop--end {
       --space-flow: none;
       right: 0;
       transform: translateX(
-        calc(100% + var(--space-l-xl) - var(--space-gutter))
+        calc(100% + var(--space-xl-2xl) - var(--space-gutter))
       );
     }
 
     h1,
     p {
-      max-inline-size: calc(var(--text-size-heading-1) * 8);
+      max-inline-size: calc(var(--text-size-heading-1) * 7);
     }
 
-    @include media-query("tablet") {
-      background-color: red;
+    @media screen and (max-width: 799px) {
+      margin-block-start: 0;
+      padding-inline: var(--space-gutter);
+
+      h1 {
+        margin-inline: auto;
+      }
+
+      p {
+        max-inline-size: unset;
+      }
     }
   }
 }
