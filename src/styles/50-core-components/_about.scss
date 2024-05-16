@@ -1,0 +1,10 @@
+.about {
+  --grid-min-item-size: 14rem;
+  --space-grid: var(--space-gutter-s);
+  --frame-width: 255;
+  --frame-height: 242;
+
+  img {
+    border-radius: 0.5em;
+  }
+}

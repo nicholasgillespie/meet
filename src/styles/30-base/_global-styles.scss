@@ -139,7 +139,11 @@ table {
   font-weight: var(--font-weight-medium);
   // text-transform: capitalize;
   text-decoration: none;
-  border: var(--button-border, solid);
+  border: var(
+    --button-border,
+    solid var(--global-border-width, medium)
+      var(--global-border-color, transparent)
+  );
   border-radius: var(--button-radius, 2em);
 
   span {

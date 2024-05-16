@@ -46,6 +46,11 @@
   // Font Weights
   --font-weight-base: #{get(font-weight, medium)};
 
+  // Border
+  --global-border-width: 2.5px;
+  --global-border-width: 20px;
+  --global-border-color: red;
+
   // Accessibility
   --focus-ring: 2px solid currentColor;
   --focus-ring-offset: 2px;

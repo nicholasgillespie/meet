@@ -15,7 +15,10 @@
 .l-box {
   color: var(--box-color, var(--color-global-text));
   background-color: var(--box-bg, var(--color-global-bg));
-  border: var(--box-border-style, solid);
+  border: var(
+    --box-border,
+    solid var(--global-border-width) var(--global-border-color)
+  );
   border-radius: var(--box-border-radius, 0);
   max-inline-size: unset;
   padding: var(--space-box, var(--space-gutter));
