@@ -1,15 +1,15 @@
 // Import design tokens
 @import "./colors";
 @import "./spacing";
-@import "./text-sizes";
-@import "./text-leading";
-@import "./fonts";
-@import "./text-weights";
-@import "./text-tracking";
+@import "./font-size";
+@import "./line-height";
+@import "./font-family";
+@import "./font-weight";
+@import "./letter-spacing";
 @import "./viewports";
 
 // Import functions
-@import "../10-functions/token-formatting.scss";
+@import "../10-functions/token-formatter.scss";
 @import "../10-functions/clamp-generator";
 @import "../10-functions/helpers/string-manipulation.scss";
 @import "../10-functions/helpers/value-providers";
@@ -21,11 +21,11 @@ $colors: formatToken(getItems($colors));
 $spacing: formatToken(
   removeSpaces(clampGenerator(getItems($spacing), $viewports))
 );
-$fontSize: formatToken(clampGenerator(getItems($text-sizes), $viewports));
-$lineHeight: formatToken(getItems($text-leading));
-$fontFamily: formatToken(getItems($fonts));
-$fontWeight: formatToken(getItems($text-weights));
-$letterSpacing: formatToken(getItems($text-tracking));
+$font-size: formatToken(clampGenerator(getItems($font-size), $viewports));
+$line-height: formatToken(getItems($line-height));
+$font-family: formatToken(getItems($font-family));
+$font-weight: formatToken(getItems($font-weight));
+$letter-spacing: formatToken(getItems($letter-spacing));
 
 // Centralize design token values in theme map
 $theme: (
@@ -39,11 +39,11 @@ $theme: (
   ),
   "colors": $colors,
   "spacing": $spacing,
-  "fontSize": $fontSize,
-  "lineHeight": $lineHeight,
-  "fontFamily": $fontFamily,
-  "fontWeight": $fontWeight,
-  "letterSpacing": $letterSpacing,
+  "font-size": $font-size,
+  "line-height": $line-height,
+  "font-family": $font-family,
+  "font-weight": $font-weight,
+  "letter-spacing": $letter-spacing,
 );
 
 // Define token groups with a key, prefix for CSS variables, and applicable properties.
@@ -64,28 +64,28 @@ $groups: (
       ),
   ),
   (
-    key: "fontSize",
-    prefix: "size",
+    key: "font-size",
+    prefix: "font-size",
     properties: ("font-size"),
   ),
   (
-    key: "lineHeight",
-    prefix: "leading",
+    key: "line-height",
+    prefix: "line-height",
     properties: ("line-height"),
   ),
   (
-    key: "fontFamily",
-    prefix: "font",
+    key: "font-family",
+    prefix: "font-family",
     properties: ("font-family"),
   ),
   (
-    key: "fontWeight",
+    key: "font-weight",
     prefix: "font-weight",
     properties: ("font-weight"),
   ),
   (
-    key: "letterSpacing",
-    prefix: "tracking",
+    key: "letter-spacing",
+    prefix: "letter-spacing",
     properties: ("letter-spacing"),
   ),
   (

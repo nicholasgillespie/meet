@@ -12,14 +12,15 @@
 // GLOBAL SETTINGS ////////////////////
 body {
   // accent-color: ???;
-  color: var(--color-global-text);
-  background: var(--color-global-bg);
-  font-size: var(--text-size-base);
-  font-family: var(--font-display);
-  font-weight: var(--font-weight-base);
-  // letter-spacing: ???;
-  line-height: var(--leading);
+  background: get(color, white);
+  color: get(color, gray-blue);
+  font-family: get(font-family, base);
+  font-size: get(font-size, base);
+  font-weight: get(font-weight, base);
+  line-height: get(line-height, base);
+  letter-spacing: get(letter-spacing, base);
   word-break: break-word;
+  font-size-adjust: from-font;
 }
 
 // DOCUMENT STRUCTURE ////////////////////
@@ -33,44 +34,37 @@ main {
 }
 
 // TYPOGRAPHY ////////////////////
-h1,
-h2,
-h3,
-h4 {
+:is(h1, h2, h3, h4) {
   font-family: get(font-family, base);
   font-weight: get(font-weight, black);
-  letter-spacing: var(--letter-spacing-heading);
-  color: var(--color-heading-text);
+  line-height: get(line-height, flat);
+  color: get(color, dark-blue);
   text-wrap: balance;
   hyphens: auto;
 }
 
 h1 {
-  font-size: var(--text-size-heading-1);
-  // max-inline-size: 30ch;
+  font-size: get(font-size, 5);
+  max-inline-size: 20ch;
 }
 
 h2 {
-  font-size: var(--text-size-heading-2);
+  font-size: get(font-size, 1);
+  letter-spacing: get(letter-spacing, extra-loose);
+  text-transform: uppercase;
+  color: get(color, strong-blue);
 }
 
 h3 {
-  font-size: var(--text-size-heading-3);
+  font-size: get(font-size, 4);
 }
 
-h4 {
-  font-size: var(--text-size-heading-4);
+:is(h4, h5, h6) {
+  font-size: get(font-size, 2);
 }
 
-h1,
-h2,
-h3,
-h4,
-button,
-.button,
-input,
-label {
-  line-height: get(line-height, flat);
+@supports not (font-size-adjust: from-font) {
+  //
 }
 
 // CONTENT ELEMENTS ////////////////////
@@ -87,6 +81,55 @@ b {
 // LIST ELEMENTS
 
 // FORM ELEMENTS
+form > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+:is(input, select, textarea) {
+  accent-color: var(--color-accent);
+}
+
+:is(
+    input:not([type="checkbox"], [type="radio"], [type="color"]),
+    select,
+    textarea
+  ) {
+  padding: 0.5em 0.8em;
+  border-radius: var(--radius-s);
+  border: var(--stroke-solid);
+  background: var(--color-dark-glare);
+  color: var(--color-light);
+  inline-size: 100%;
+
+  &::placeholder {
+    color: rgb(255 255 255 / 70%);
+  }
+}
+
+input,
+label {
+  line-height: get(line-height, flat);
+}
+
+label::after {
+  content: "\A";
+  white-space: pre;
+}
+
+label:has(input) {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-gutter);
+}
+
+label:has(input) input {
+  transform: translateY(0.25ex);
+}
+
+label:has(input) + label:has(input) {
+  --flow-space: var(--space-m);
+  margin-block-start: var(--space-m);
+}
 
 // TABLE ELEMENTS
 table {
@@ -99,86 +142,22 @@ table {
 
 // INTERACTIVE ELEMENTS ////////////////////
 // A ELEMENT SPECIFICS
-.link {
-  display: inline-block;
-  cursor: pointer;
-  background: transparent;
-  color: var(--color-french-rose);
-  text-decoration: none;
-  text-underline-offset: 0;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-    color: var(--color-cherry-blossom-pink);
-  }
-
-  &[aria-current="page"] {
-    //
-  }
-
-  & > img {
-    display: inline-block;
-  }
-}
 
 // BUTTON STYLES
-.button {
-  // https://piccalil.li/blog/link-button
-  // https://piccalil.li/blog/use-transparent-borders-and-outlines-to-assist-with-high-contrast-mode
-  // view sara soueidan's article on this
-  display: inline-flex;
-  gap: var(--button-gap, 0.5ch);
-  align-items: center;
-  justify-content: center;
-  padding: var(--button-padding, var(--space-s) var(--space-l));
-  background: var(--button-bg, var(--color-surface-bg));
-  color: var(--button-text, var(--color-surface-text));
-  font-size: var(--button-font-size, var(--text-size-base));
-  font-family: var(--button-font, var(--font-display));
-  font-weight: var(--font-weight-medium);
-  // text-transform: capitalize;
-  text-decoration: none;
-  border: var(
-    --button-border,
-    solid var(--global-border-width, medium)
-      var(--global-border-color, transparent)
-  );
-  border-radius: var(--button-radius, 2em);
-
-  span {
-    color: #8fe3f9;
-  }
-
-  &:hover,
-  &:focus-visible {
-    --button-bg: var(--color-surface-bg-interact);
-  }
-
-  &[data-button="alternate"] {
-    --button-bg: var(--color-purple);
-
-    span {
-      color: #d9b8ff;
-    }
-
-    &:hover,
-    &:focus-visible {
-      --button-bg: var(--color-lavender);
-    }
-  }
-}
 
 // INTERACTIVE STATES ////////////////////
 // SELECTION
 
 // FOCUS AND TARGET STATES
 :focus {
-  outline-offset: 0.65ch;
+  outline: 2px solid var(--focus-color, currentColor);
+  // outline-offset: 0.65ch;
+  outline-offset: var(--focus-offset, 0.2lh);
 }
 
 :target {
   scroll-margin-block: 2ex;
+  scroll-margin-block: 5lh;
 }
 
 // INTERFACE ELEMENTS ////////////////////

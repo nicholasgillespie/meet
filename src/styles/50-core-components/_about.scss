@@ -3,8 +3,15 @@
   --space-grid: var(--space-gutter-s);
   --frame-width: 255;
   --frame-height: 242;
+  --space-flow: var(--space-l);
+  padding-block-end: 0;
 
   img {
     border-radius: 0.5em;
+  }
+
+  p {
+    --measure: 42ch;
+    margin-inline: auto;
   }
 }

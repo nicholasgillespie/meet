@@ -7,24 +7,12 @@
 }
 
 // Function to format a token by creating a new map with slugified names and corresponding values
-@function formatToken($token, $isNested: false) {
+@function formatToken($token, $isNested: null) {
   $result: ();
 
   // If the token is nested, handle it differently
-  @if $isNested {
-    @each $category, $categoryItems in $token {
-      $formattedItems: ();
-      @each $item in $categoryItems {
-        $formattedItems: map-merge($formattedItems, formatItem($item));
-      }
-
-      $result: map-merge(
-        $result,
-        (
-          $category: $formattedItems,
-        )
-      );
-    }
+  @if $isNested == "nested" {
+    // Implement nested token formatting here
   } @else {
     @each $item in $token {
       $result: map-merge($result, formatItem($item));

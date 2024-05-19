@@ -18,6 +18,7 @@
  */
 
 .l-grid {
+  // https://daverupert.com/2022/07/solving-the-dangler-conundrum-with-has-and-container-queries/
   display: grid;
   grid-template-columns: repeat(
     var(--grid-placement, auto-fill),

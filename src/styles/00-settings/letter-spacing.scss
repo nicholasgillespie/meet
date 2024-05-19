@@ -1,5 +1,5 @@
-$text-tracking: (
-  "title": "Tracking",
+$letter-spacing: (
+  "title": "Letter-spacing",
   "description": "Uniform letter-spacing adjustments",
   "items": (
     // (
@@ -11,12 +11,16 @@ $text-tracking: (
     //   "value": -0.05ch,
     // ),
     (
-        "name": "Standard",
+        "name": "Base",
         "value": normal,
       ),
-    // (
-    //   "name": "Loose",
-    //   "value": 0.1ch,
-    // ),,,
+    (
+      "name": "Loose",
+      "value": 0.1ch,
+    ),
+    (
+      "name": "Extra Loose",
+      "value": 0.2ch,
+    ),
   ),
 );

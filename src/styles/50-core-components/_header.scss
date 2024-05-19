@@ -8,7 +8,7 @@ header {
     margin-inline: auto;
 
     img {
-      block-size: var(--size-step-2);
+      block-size: var(--font-size-2);
       line-height: var(--leading);
     }
   }
@@ -46,8 +46,8 @@ header {
       position: absolute;
       top: 0;
       block-size: calc(
-        var(--text-size-heading-1) * 2 + var(--text-size-base) * 3 + 4em +
-          var(--text-size-base) + var(--space-s) * 2
+        var(--font-size-5) * 2 + var(--font-size-base) * 3 + 4em +
+          var(--font-size-base) + var(--space-s) * 2
       );
 
       @media screen and (max-width: 799px) {
@@ -56,7 +56,7 @@ header {
     }
 
     .image-desktop--start {
-      top: calc(var(--text-size-heading-1) * -1);
+      top: calc(var(--font-size-5) * -1);
       left: 0;
       transform: translateX(
         calc(-100% - var(--space-xl-2xl) + var(--space-gutter))
@@ -73,7 +73,7 @@ header {
 
     h1,
     p {
-      max-inline-size: calc(var(--text-size-heading-1) * 7);
+      max-inline-size: calc(var(--font-size-5) * 7);
     }
 
     @media screen and (max-width: 799px) {

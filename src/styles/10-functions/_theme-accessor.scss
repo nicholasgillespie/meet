@@ -2,14 +2,15 @@
 @import "../00-settings/theme-config";
 
 // Function to retrieve token values based on property
-@function get($property: null, $value: null, $fallback: null) {
+@function get($property: null, $value: null) {
   // Store the original property value
   $originalProperty: $property;
 
-  // If the property is "space", "margin", or "padding", set it to "margin" or "padding"
-  @if $property == "space" {
-    $property: "margin";
-  }
+  // Convert $value to a string if it's a number
+  $value: if(type-of($value) == "number", "#{ $value }", $value);
+
+  // If the property is "space", set it to "margin"
+  $property: if($property == "space", "margin", $property);
 
   // Collect all properties that map to a token
   $validProperties: ();
@@ -20,13 +21,11 @@
     $tokenName: map-get($group, "key");
     $properties: map-get($group, "properties");
 
-    @if type-of($properties) == "map" {
-      // Handle spacing token separately
-      @if $tokenName == "spacing" {
-        $properties: ("margin", "padding");
-      } @else {
-        $properties: map-keys($properties);
-      }
+    // Handle spacing token separately
+    @if $tokenName == "spacing" {
+      $properties: ("margin", "padding");
+    } @else if type-of($properties) == "map" {
+      $properties: map-keys($properties);
     } @else if type-of($properties) == "string" {
       $properties: ($properties);
     }
@@ -47,11 +46,7 @@
 
       // If value exists in map, return CSS variable; else, warn invalid value
       @if $prefix and map-has-key($items, $value) {
-        @if $value == "standard" {
-          @return var(--#{$prefix});
-        } @else {
-          @return var(--#{$prefix}-#{$value});
-        }
+        @return var(--#{$prefix}-#{$value});
       } @else {
         @if $originalProperty == "space" {
           $property: "space";

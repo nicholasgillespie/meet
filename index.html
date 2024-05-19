@@ -24,7 +24,7 @@
     <!-- Script -->
     <script type="module" defer src="/src/scripts/main.js"></script>
   </head>
-  <body>
+  <body class="u-counter__container">
     <header class="l-region l-canvas">
       <nav class="l-cluster">
         <a href="#">
@@ -61,37 +61,41 @@
         />
       </section>
     </header>
-    <main>
-      <ul role="list" class="l-canvas">
-        <div class="l-box">x</div>
-        <li>
-          <section class="about">
-            <div class="l-grid">
-              <img
-                class="l-frame"
-                src="./public/images/desktop/image-woman-in-videocall.jpg"
-                alt=""
-              />
-              <img
-                class="l-frame"
-                src="./public/images/desktop/image-women-videochatting.jpg"
-                alt=""
-              />
-              <img
-                class="l-frame"
-                src="./public/images/desktop/image-men-in-meeting.jpg"
-                alt=""
-              />
-              <img
-                class="l-frame"
-                src="./public/images/desktop/image-man-texting.jpg"
-                alt=""
-              />
-            </div>
-          </section>
-        </li>
-      </ul>
+    <main class="l-canvas">
+      <section class="[ about ][ l-region ][ u-counter__element ]">
+        <div class="l-grid">
+          <img
+            class="l-frame"
+            src="/images/desktop/image-woman-in-videocall.jpg"
+            alt=""
+          />
+          <img
+            class="l-frame"
+            src="/images/desktop/image-women-videochatting.jpg"
+            alt=""
+          />
+          <img
+            class="l-frame"
+            src="/images/desktop/image-men-in-meeting.jpg"
+            alt=""
+          />
+          <img
+            class="l-frame"
+            src="/images/desktop/image-man-texting.jpg"
+            alt=""
+          />
+        </div>
+        <div class="l-region l-flow l-center">
+          <h2>Built for modern use</h2>
+          <h3>Smarter meetings, all in one place</h3>
+          <p>
+            Send messages, share files, show your screen, and record your
+            meetings — all in one workspace. Control who can join with
+            invite-only team access, data encryption, and data export.
+          </p>
+        </div>
+      </section>
     </main>
-    <footer>x</footer>
+    <footer class="[ l-region ][ u-counter__element u-bg-dark-blue ]"></footer>
   </body>
 </html>
