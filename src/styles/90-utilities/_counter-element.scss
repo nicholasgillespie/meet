@@ -20,14 +20,15 @@
 
     /* Use the counter as a pseudo-element before the list item */
     &::before {
-      content: counter(counter);
+      content: counter(counter, decimal-leading-zero);
       display: inline-block;
-      border: 1px solid currentColor;
+      border: 1px solid #dddde3;
       border-radius: 50%;
       font-size: var(--font-size-base);
       inline-size: var(--counter-circle-diameter);
       block-size: var(--counter-circle-diameter);
       line-height: var(--counter-circle-diameter);
+      font-weight: var(--font-weight-black);
       background-color: var(--color-white);
       position: absolute;
       inset-block-start: 0;
@@ -42,7 +43,7 @@
       display: inline-block;
       inline-size: 1px;
       block-size: var(--counter-line-length);
-      background: currentColor;
+      background: #dddde3;
       position: absolute;
       inset-block-start: calc(
         -1 * var(--counter-circle-diameter) / 2 - var(--counter-line-length)
