@@ -49,14 +49,11 @@ h1 {
 }
 
 h2 {
-  font-size: get(font-size, 1);
-  letter-spacing: get(letter-spacing, extra-loose);
-  text-transform: uppercase;
-  color: get(color, strong-blue);
+  font-size: get(font-size, 4);
 }
 
 h3 {
-  font-size: get(font-size, 4);
+  font-size: get(font-size, 3);
 }
 
 :is(h4, h5, h6) {
@@ -72,6 +69,14 @@ h3 {
 p {
   max-inline-size: var(--measure, 66ch);
   text-wrap: pretty;
+}
+
+.lede {
+  font-size: get(font-size, 1);
+  letter-spacing: get(letter-spacing, extra-loose);
+  text-transform: uppercase;
+  color: get(color, strong-blue);
+  font-weight: get(font-weight, black);
 }
 
 b {

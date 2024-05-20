@@ -1,0 +1,54 @@
+@use "../10-functions/theme-accessor" as *;
+
+footer {
+  --repel-wrap: nowrap;
+  --repel-vertical-alignment: center;
+  --cluster-vertical-alignment: flex-start;
+  --space-cluster: var(--space-l) var(--space-xl);
+  --space-repel: var(--space-xl) var(--space-l);
+
+  background-image: url("/images/desktop/image-footer.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: hsla(192, 37%, 48%, 0.85);
+  }
+
+  & * {
+    z-index: 1;
+    color: get(color, white);
+    text-align: start;
+  }
+
+  h2 {
+    max-inline-size: 11ch;
+  }
+
+  p {
+    max-inline-size: 30ch;
+  }
+
+  .button {
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 600px) {
+    --repel-wrap: wrap;
+    --repel-vertical-alignment: flex-end;
+
+    & * {
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    .button {
+      white-space: wrap;
+      flex-wrap: wrap;
+    }
+  }
+}
