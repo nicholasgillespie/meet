@@ -59,7 +59,9 @@ h3 {
   font-size: get(font-size, 3);
 }
 
-:is(h4, h5, h6) {
+h4,
+h5,
+h6 {
   font-size: get(font-size, 2);
 }
 
