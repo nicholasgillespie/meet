@@ -34,7 +34,10 @@ main {
 }
 
 // TYPOGRAPHY ////////////////////
-:is(h1, h2, h3, h4) {
+h1,
+h2,
+h3,
+h4 {
   font-family: get(font-family, base);
   font-weight: get(font-weight, black);
   line-height: get(line-height, flat);
@@ -45,7 +48,7 @@ main {
 
 h1 {
   font-size: get(font-size, 5);
-  max-inline-size: 20ch;
+  // max-inline-size: 20ch;
 }
 
 h2 {
