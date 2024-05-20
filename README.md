@@ -4,7 +4,7 @@ Visit the live website here: [Meet Project Website](https://nicholasgillespie.gi
 
 ## Overview
 
-The Meet e-leaning project is a Vite and PostCSS-based project, hosted on GitHub Pages. It incorporates the in-development W3C design system, utilizing SCSS syntax for styling.
+The Meet video conferencing project is a Vite and PostCSS-based project, hosted on GitHub Pages. It incorporates the in-development W3C design system, utilizing SCSS syntax for styling.
 
 [![Screenshot of the Meet project](./docs/design/preview.jpg)](https://nicholasgillespie.github.io/meet/)
 
