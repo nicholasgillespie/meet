@@ -15,7 +15,7 @@ The project uses:
 - **W3C Design System**: An in-development design system that provides a cohesive set of design and code standards.
 - **SCSS**: A CSS preprocessor that adds powerful features like variables, nesting, and mixins to CSS.
 
-You can find the Meet e-leaning project repository on [GitHub](https://github.com/nicholasgillespie/meet).
+You can find the Meet project repository on [GitHub](https://github.com/nicholasgillespie/meet).
 
 ## Getting Started
 
